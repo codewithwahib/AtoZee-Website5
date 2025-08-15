@@ -15,9 +15,9 @@ import { hero } from './hero'
 import { hero2 } from './hero2'
 import { hero3 } from './hero3'
 import { hero4 } from './hero4'
+import jobApplication from './application'
 import { hero5 } from './hero5'
 // import homeproduct from './mainp'
-import { ad } from './ad'
 import { pureImage } from './ourclients'
 import { abouthome1 } from './abouthome1'
 import { abouthome2 } from './abouthome2'
@@ -25,9 +25,10 @@ import { abouthome3 } from './abouthome3'
 import { abouthome4 } from './abouthome4'
 import { abouthome5 } from './abouthome5'
 import {news} from '@/sanity/schemaTypes/news'
+import admin from './admin'
 import { newsimage } from './newsimage'
-
-
+import advertisement from './ad'
+import auth from './auth'
 
 
 
@@ -47,7 +48,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     // stainlesssteelstrcuture,
     typetestedpanels,
     cable1,
-    ad,
     pureImage,
     abouthome1,   
     abouthome2,  
@@ -56,6 +56,10 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     abouthome5,
     news, 
     newsimage, 
+    jobApplication,
+    admin,
+    advertisement,
+    auth,
     // cabletraysandladder,
   ],
 }

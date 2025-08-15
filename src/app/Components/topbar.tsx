@@ -71,15 +71,15 @@ info@atozee.net            </span>
         
         
         {/* Vertical Divider - Only on larger screens */}
-        <div className="hidden md:block h-8 w-px bg-gray-300 mx-4"></div>
+        <div className="hidden md:block h-6 w-px bg-gray-300 mx-4"></div>
         
         {/* Right Side - Social Media with dividers */}
         <div className="flex items-center gap-5 md:gap-6">
           <a 
-            href="https://facebook.com" 
+            href="https://www.facebook.com/arsalanzaman99/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hover:text-[#3b5998] transition-colors text-md"
+            className="text-[#3b5998] transition-colors text-xl"
             aria-label="Facebook"
           >
             <FaFacebook />
@@ -91,7 +91,7 @@ info@atozee.net            </span>
             href="https://twitter.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hover:text-[#1DA1F2] transition-colors text-md"
+            className="text-[#1DA1F2] transition-colors text-xl"
             aria-label="Twitter"
           >
             <FaTwitter />
@@ -103,7 +103,7 @@ info@atozee.net            </span>
             href="https://youtube.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hover:text-[#FF0000] transition-colors text-md"
+            className="text-[#FF0000] transition-colors text-xl"
             aria-label="YouTube"
           >
             <FaYoutube />
@@ -115,7 +115,7 @@ info@atozee.net            </span>
             href="https://linkedin.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hover:text-[#0077B5] transition-colors text-md"
+            className="text-[#0077B5] transition-colors text-xl"
             aria-label="LinkedIn"
           >
             <FaLinkedin />
@@ -127,7 +127,7 @@ info@atozee.net            </span>
             href="https://instagram.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hover:text-[#E1306C] transition-colors text-xl"
+            className="text-[#E1306C] transition-colors text-xl"
             aria-label="Instagram"
           >
             <FaInstagram />

@@ -145,6 +145,12 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import { DM_Sans } from 'next/font/google';
+
+const dmsans = DM_Sans({ 
+  subsets: ['latin'],
+  weight: '700',
+});
 
 const products = [
   {
@@ -174,6 +180,8 @@ const products = [
     title: 'Medium Voltage Switchgear',
     image: '/p111.png',
     link: '/products/control-panels',
+    logo: '/s1.png'
+
   },
   {
     title: 'Distribution Box',
@@ -214,7 +222,7 @@ const products = [
 
 export default function Products() {
   return (
-    <section className="py-12 md:py-20 bg-gradient-to-br from-white to-gray-50 font-sans overflow-hidden">
+    <section className={`py-12 md:py-20 bg-gradient-to-br from-white to-gray-50 overflow-hidden ${dmsans.className}`}>
       {/* Banner Section - Full width with no right padding */}
       <div className="relative w-full h-64 md:h-80 lg:h-[28rem] xl:h-[32rem] mb-12 md:mb-16">
         <div className="absolute inset-0 w-screen">
@@ -228,10 +236,10 @@ export default function Products() {
           />
         </div>
         <div className="relative container mx-auto px-4 sm:px-6 h-full flex flex-col items-center justify-center">
-          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-white text-center px-4 tracking-wider">
+          <h1 className={`text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center px-4 tracking-wider ${dmsans.className}`}>
             OUR PRODUCTS
           </h1>
-          <p className="text-center text-white text-base sm:text-md md:text-lg font-light mt-4 max-w-xs sm:max-w-md md:max-w-2xl mx-auto tracking-wide md:tracking-widest px-4">
+          <p className={`text-center text-white text-base sm:text-md md:text-lg font-light mt-4 max-w-xs sm:max-w-md md:max-w-2xl mx-auto tracking-wide md:tracking-widest px-4 ${dmsans.className}`}>
             Explore our trusted range of switchgear and power management solutions.
           </p>
         </div>
@@ -271,7 +279,7 @@ export default function Products() {
                   />
                 </div>
                 <div className="p-2 sm:p-3 md:p-4 text-center flex-grow flex items-center justify-center">
-                  <h3 className="text-xs sm:text-sm md:text-base font-medium text-gray-800 group-hover:text-black transition-colors">
+                  <h3 className={`text-xs sm:text-sm md:text-base font-medium text-gray-800 group-hover:text-black transition-colors ${dmsans.className}`}>
                     {product.title}
                   </h3>
                 </div>

@@ -31,6 +31,6 @@
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx"
-  ],
+, "src/app/api/verify-password"  ],
   "exclude": ["node_modules"]
 }

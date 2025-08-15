@@ -7,8 +7,12 @@ import Image from 'next/image';
 import Navbar from '@/app/Components/navbar';
 import Footer from '@/app/Components/footer';
 import { FiClock } from 'react-icons/fi';
+import { DM_Sans } from 'next/font/google';
 
-
+const dmsans = DM_Sans({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+});
 
 interface NewsImage {
   asset: {
@@ -95,7 +99,7 @@ export default async function NewsDetailPage({ params }: { params: { slug: strin
     <>
       <Navbar />
 
-      <main className="flex flex-col md:flex-row px-2 sm:px-4 py-6 max-w-7xl mx-auto gap-4 md:gap-6">
+      <main className={`flex flex-col md:flex-row px-2 sm:px-4 py-6 max-w-7xl mx-auto gap-4 md:gap-6 ${dmsans.className}`}>
         {/* Left sidebar with news list */}
         <div className="w-full md:w-1/3">
           <div className="space-y-3">
@@ -105,8 +109,8 @@ export default async function NewsDetailPage({ params }: { params: { slug: strin
                 href={`/news/${newsItem.slug}`}
                 className={`block p-4 text-xl tracking-wider transition-colors border border-black rounded-r-none ${
                   newsItem.slug === currentNews.slug
-                    ? 'bg-white text-brown-800 font-medium border-brown-800'
-                    : 'hover:bg-gray-100 text-gray-700'
+                    ? 'bg-white text-brown-800 font-bold border-brown-800'
+                    : 'hover:bg-gray-100 text-gray-700 font-medium'
                 }`}
               >
                 <h3 className="text-xl">{newsItem.name}</h3>
@@ -118,17 +122,17 @@ export default async function NewsDetailPage({ params }: { params: { slug: strin
         {/* Right content area with background */}
         <div className="w-full md:w-2/3 relative pr-5">
           {/* Background element */}
-          <div className="absolute inset-0 -z-10 bg-gray-50 rounded-lg translate-x-6 " />
+          <div className="absolute inset-0 -z-10 bg-gray-50 rounded-lg translate-x-6" />
           
           {/* Content container */}
           <div className="relative bg-white p-6 sm:p-8 md:p-10 lg:p-12 rounded-lg shadow-sm border border-gray-100 animate-fadeInDown">
             <div className="flex flex-col sm:flex-row justify-between items-baseline mb-6 gap-4">
-              <h1 className="text-3xl sm:text-4xl font-light text-black tracking-wider">
+              <h1 className="text-3xl sm:text-4xl font-bold text-black tracking-wider">
                 {currentNews.name}
               </h1>
               <div className="flex items-center gap-2">
                 <FiClock className="text-gray-400 text-lg" />
-                <p className="text-lg font-light tracking-widest text-gray-500 whitespace-nowrap">
+                <p className="text-lg font-medium tracking-widest text-gray-500 whitespace-nowrap">
                   {new Date(currentNews.publishDate).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
@@ -150,7 +154,7 @@ export default async function NewsDetailPage({ params }: { params: { slug: strin
               </div>
             )}
 
-            <div className="prose max-w-none font-light tracking-wider text-lg text-gray-800">
+            <div className={`prose max-w-none font-medium tracking-wider text-lg text-gray-800 ${dmsans.className}`}>
               <PortableText value={currentNews.description} />
             </div>
 

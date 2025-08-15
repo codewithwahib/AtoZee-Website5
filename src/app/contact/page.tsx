@@ -10,7 +10,6 @@ import ScrollToTopButton from '../Components/scroll';
 const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
-  variable: '--font-dm-sans'
 });
 
 export default function ContactPage() {
@@ -71,7 +70,7 @@ export default function ContactPage() {
     mapSrc: string;
     mapLink: string;
   }) => (
-    <section className="py-8 px-4 max-w-7xl mx-auto border border-gray-200 bg-gray-50 rounded-lg my-6">
+    <section className={`py-8 px-4 max-w-7xl mx-auto border border-gray-200 bg-gray-50 rounded-lg my-6 ${dmSans.className}`}>
       <div className="grid md:grid-cols-2 gap-6 items-start">
         {/* Contact Info */}
         <div className="space-y-4 pl-2">
@@ -177,7 +176,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className={`${dmSans.variable} font-sans text-gray-800 bg-white`}>
+    <div className={`${dmSans.className} text-gray-800 bg-white`}>
       <ContactBar/>
       <Navbar />
 
@@ -201,7 +200,7 @@ export default function ContactPage() {
       />
 
       {/* Contact Form */}
-      <section className="py-8 px-4 max-w-4xl mx-auto bg-white my-6" ref={formRef}>
+      <section className={`py-8 px-4 max-w-4xl mx-auto bg-white my-6 ${dmSans.className}`} ref={formRef}>
         <div className="text-center mb-6">
           <h2 className="text-xl md:text-2xl font-bold text-black">
             Get In Touch With Us

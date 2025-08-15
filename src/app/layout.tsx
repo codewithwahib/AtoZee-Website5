@@ -24,7 +24,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "A to Zee | Engineering Services",
+  title: "A to Zee Switchgear Engineering ",
   description: "Switchgears Manufacturers",
 };
 

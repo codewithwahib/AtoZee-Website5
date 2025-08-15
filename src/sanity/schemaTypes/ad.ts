@@ -1,36 +1,41 @@
-import { defineType, defineField } from 'sanity'
+// src/sanity/schemaTypes/ad.ts
+import { Rule } from '@sanity/types'
 
-export const ad = defineType({
-  name: 'ad',
-  title: 'Ad',
+const advertisementSchema = {
+  name: 'advertisement',
+  title: 'Advertisement',
   type: 'document',
   fields: [
-    defineField({
-      name: 'name',
-      title: 'Product Name',
+    {
+      name: 'image',
+      title: 'Ad Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
+      name: 'altText',
+      title: 'Alternative Text',
       type: 'string',
-      validation: Rule => Rule.required(),
-    }),
-    defineField({
-      name: 'link',
-      title: 'Product Link',
-      type: 'object',
-      fields: [
-        defineField({
-          name: 'url',
-          title: 'URL',
-          type: 'url',
-          validation: Rule => Rule.uri({
-            scheme: ['http', 'https', 'mailto', 'tel'],
-          }),
-        }),
-        defineField({
-          name: 'openInNewTab',
-          title: 'Open in New Tab?',
-          type: 'boolean',
-          initialValue: false,
-        }),
-      ],
-    }),
+      description: 'Important for SEO and accessibility',
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
+      name: 'targetUrl',
+      title: 'Target URL',
+      type: 'url',
+      description: 'Where the ad should link to',
+    },
+    {
+      name: 'isActive',
+      title: 'Is Active',
+      type: 'boolean',
+      description: 'Toggle to enable/disable this ad',
+      initialValue: true,
+    },
   ],
-})
+}
+
+export default advertisementSchema
